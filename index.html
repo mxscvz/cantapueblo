@@ -1,0 +1,19 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cantapueblo</title>
+  <meta http-equiv="refresh" content="0; url={{ '/es/' | relative_url }}">
+  <script>
+    var lang = (navigator.language || 'es').toLowerCase();
+    var target = lang.indexOf('en') === 0 ? '{{ "/en/" | relative_url }}' : '{{ "/es/" | relative_url }}';
+    window.location.replace(target);
+  </script>
+</head>
+<body>
+  <p>Cantapueblo — <a href="{{ '/es/' | relative_url }}">Español</a> · <a href="{{ '/en/' | relative_url }}">English</a></p>
+</body>
+</html>

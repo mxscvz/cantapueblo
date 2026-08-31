@@ -1,2 +1,13 @@
-title: Festival Cantapueblo
-description: Cantapueblos website
+title: Cantapueblo
+description: "La Fiesta Coral de América — Mendoza, Argentina"
+baseurl: "/cantapueblo"
+url: "https://mxscvz.github.io"
+
+markdown: kramdown
+theme: null
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"

@@ -1,0 +1,210 @@
+:root {
+  --parchment: #efe9dc;
+  --parchment-deep: #e4dcc9;
+  --ink: #241a1a;
+  --wine: #6b2737;
+  --wine-deep: #4a1a26;
+  --ochre: #c98a2c;
+  --stone: #445059;
+  --line: rgba(36, 26, 26, 0.14);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--parchment);
+  color: var(--ink);
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .wordmark {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  line-height: 1.1;
+  margin: 0;
+}
+
+a {
+  color: var(--wine);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ochre);
+  outline-offset: 3px;
+}
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.wordmark {
+  font-size: 1.4rem;
+  color: var(--ink);
+}
+.main-nav {
+  display: flex;
+  gap: 1.75rem;
+  flex: 1;
+  justify-content: center;
+}
+.main-nav a {
+  color: var(--ink);
+  font-size: 0.98rem;
+}
+.main-nav a[aria-current="page"] {
+  color: var(--wine);
+  border-bottom: 2px solid var(--ochre);
+  padding-bottom: 3px;
+}
+.lang-switch a {
+  font-size: 0.85rem;
+  border: 1px solid var(--line);
+  padding: 0.3rem 0.7rem;
+  border-radius: 3px;
+  color: var(--stone);
+}
+.lang-switch a:hover { border-color: var(--stone); text-decoration: none; }
+
+/* Hero */
+.hero {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem 4rem;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: end;
+}
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  letter-spacing: -0.01em;
+}
+.hero .tagline {
+  color: var(--wine);
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  margin-top: 0.75rem;
+}
+.hero .hero-fact {
+  border-left: 3px solid var(--ochre);
+  padding-left: 1.2rem;
+  font-size: 0.98rem;
+  color: var(--stone);
+}
+.hero .hero-fact strong {
+  display: block;
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  color: var(--ink);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+/* Sections */
+.section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+.section h2 {
+  font-size: 1.9rem;
+  max-width: 32ch;
+  margin-bottom: 1.5rem;
+}
+.section p {
+  max-width: 62ch;
+}
+.section-alt {
+  background: var(--parchment-deep);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+.timeline-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1.2rem;
+}
+.timeline-year {
+  font-family: 'Fraunces', serif;
+  font-size: 1.3rem;
+  color: var(--wine);
+}
+.timeline-item p { margin: 0; max-width: 56ch; }
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.pillar h3 {
+  font-size: 1.15rem;
+  color: var(--wine-deep);
+  margin-bottom: 0.5rem;
+}
+.pillar p { margin: 0; font-size: 0.98rem; }
+
+.contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+.contact-block a { font-size: 1.05rem; }
+.contact-note {
+  color: var(--stone);
+  font-size: 0.95rem;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+}
+.footer-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 3rem;
+}
+.footer-mark {
+  font-family: 'Fraunces', serif;
+  margin: 0 0 0.3rem;
+}
+.footer-note {
+  color: var(--stone);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .header-inner { flex-wrap: wrap; gap: 1rem; }
+  .main-nav { order: 3; width: 100%; justify-content: flex-start; gap: 1.2rem; }
+  .hero { grid-template-columns: 1fr; padding-top: 3rem; }
+  .pillars { grid-template-columns: 1fr; }
+  .contact-block { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 60px 1fr; }
+}
