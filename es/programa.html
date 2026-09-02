@@ -1,0 +1,99 @@
+---
+lang: es
+section: programme
+title: Programa
+description: "Cómo es una semana de Cantapueblo."
+---
+
+<section class="section reveal" style="padding-top: 3.5rem;">
+  <div class="section-inner">
+  <h2>Cómo es una semana de Cantapueblo</h2>
+  <p>
+    La estructura típica del festival, con conciertos en distintos formatos
+    y escenarios — de la ciudad a la montaña. Las fechas y sedes exactas de
+    la edición 2027 se confirman más adelante.
+  </p>
+
+  <div class="schedule">
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Día 1</span>
+      <div>
+        <h3>Concierto Bienvenida</h3>
+        <p>Los coros que llegan un día antes protagonizan una presentación de apertura; el resto asiste como invitado especial.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Día 2</span>
+      <div>
+        <h3>Concierto de los Pueblos</h3>
+        <p>Cada coro comparte escenario con otros coros del festival, en una presentación conjunta.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Día 3</span>
+      <div>
+        <h3>Concierto en las Alturas</h3>
+        <p>Al pie del Cerro Aconcagua, en contacto directo con la montaña — una de las experiencias más recordadas por los coros visitantes.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Día 3 (noche)</span>
+      <div>
+        <h3>Concierto por la Paz</h3>
+        <p>Presentación nocturna compartida entre varios coros del festival.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Día 4</span>
+      <div>
+        <h3>Cantata Callejera</h3>
+        <p>Los coros cantan como solistas en distintos espacios del centro de la ciudad de Mendoza, a cielo abierto.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Cierre</span>
+      <div>
+        <h3>Concierto Final</h3>
+        <p>Cada coro interpreta una obra propia y luego se suma al Gran Coro de Cantapueblo, cantando "El Canto Grande" junto a todos los demás.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="audio-block reveal glass">
+    <span class="country">El Canto Grande — himno oficial del festival</span>
+    <audio controls></audio>
+    <p class="bento-note">Reproductor listo para usar; falta cargar la grabación real.</p>
+  </div>
+  </div>
+</section>
+
+<section class="section section-alt reveal">
+  <div class="section-inner">
+  <h2>Coros participantes</h2>
+  <p>
+    Los datos de cada coro se cargan de un archivo JSON local. Por ahora
+    muestra entradas de ejemplo — se conecta al registro real una vez que
+    esté consolidado.
+  </p>
+  <div class="bento" id="bento-programa"></div>
+  <p class="bento-note">Datos de ejemplo, no definitivos.</p>
+  </div>
+</section>
+
+<script>
+  fetch('{{ "/assets/data/programa.json" | relative_url }}')
+    .then(function (res) { return res.json(); })
+    .then(function (coros) {
+      var grid = document.getElementById('bento-programa');
+      coros.forEach(function (c) {
+        var card = document.createElement('div');
+        card.className = "bento-card reveal glass glass-hover";
+        card.innerHTML =
+          '<div class="country">' + c.country_es + '</div>' +
+          '<h3>' + c.name + '</h3>' +
+          '<p>' + c.desc_es + '</p>';
+        grid.appendChild(card);
+        if (window.CantaReveal) { window.CantaReveal.observe(card); } else { card.classList.add('is-visible'); }
+      });
+    });
+</script>

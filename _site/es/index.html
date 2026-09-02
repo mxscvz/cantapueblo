@@ -1,11 +1,42 @@
----
-lang: es
-section: home
-title: Inicio
-description: "Cantapueblo, La Fiesta Coral de América. Encuentro coral internacional en Mendoza, Argentina, desde 1989."
----
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio · Cantapueblo</title>
+  <meta name="description" content="Cantapueblo, La Fiesta Coral de América. Encuentro coral internacional en Mendoza, Argentina, desde 1989.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/cantapueblo/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="/cantapueblo/es/">
+      <img src="/cantapueblo/assets/img/logo.png" alt="Cantapueblo 2027">
+    </a>
+    <nav class="main-nav">
+      
+        <a href="/cantapueblo/es/" aria-current="page">Inicio</a>
+        <a href="/cantapueblo/es/historia.html" >Historia</a>
+        <a href="/cantapueblo/es/programa.html" >Programa</a>
+        <a href="/cantapueblo/es/contacto.html" >Contacto</a>
+      
+    </nav>
+    <div class="lang-switch">
+      
+        <a href="/cantapueblo/en/">EN</a>
+        
+        
+        
+      
+    </div>
+  </div>
+</header>
 
-<section class="hero">
+  <main>
+    <section class="hero">
   <h1>La Fiesta Coral de América</h1>
   <p class="tagline">Un encuentro internacional que canta la amistad entre los pueblos.</p>
   <div class="hero-stats">
@@ -15,7 +46,7 @@ description: "Cantapueblo, La Fiesta Coral de América. Encuentro coral internac
   </div>
 </section>
 
-<img class="hero-photo reveal" src="{{ '/assets/img/hero-aconcagua.jpg' | relative_url }}" alt="Coros participantes con banderas de sus países al pie del Cerro Aconcagua">
+<img class="hero-photo reveal" src="/cantapueblo/assets/img/hero-aconcagua.jpg" alt="Coros participantes con banderas de sus países al pie del Cerro Aconcagua">
 <p class="hero-photo-caption">Concierto en las Alturas, al pie del Cerro Aconcagua.</p>
 
 <section class="section reveal">
@@ -58,7 +89,7 @@ description: "Cantapueblo, La Fiesta Coral de América. Encuentro coral internac
   <div class="section-inner">
   <div class="pull-quote glass glass-hover">
     <div class="pull-quote-wrap">
-      <img class="pull-quote-photo" src="{{ '/assets/img/quote-portrait.jpg' | relative_url }}" alt="Alejandro Scarpetta dirigiéndose al público en un concierto">
+      <img class="pull-quote-photo" src="/cantapueblo/assets/img/quote-portrait.jpg" alt="Alejandro Scarpetta dirigiéndose al público en un concierto">
       <div>
         <p>Cantar en nuestro festival es una experiencia que jamás olvidarán. La emoción está a flor de piel en cada concierto. Su coro, los bellos paisajes, el buen vino y la calidez de nuestra gente son la alquimia perfecta para celebrar la vida en Cantapueblo.</p>
         <cite>Alejandro Scarpetta — Creador y Director Artístico</cite>
@@ -96,9 +127,24 @@ description: "Cantapueblo, La Fiesta Coral de América. Encuentro coral internac
     para coordinar la participación de tu coro en la próxima edición.
   </p>
   <p>
-    <a class="btn" href="{{ '/es/programa.html' | relative_url }}">Ver programa</a>
+    <a class="btn" href="/cantapueblo/es/programa.html">Ver programa</a>
     &nbsp;&nbsp;
-    <a href="{{ '/es/historia.html' | relative_url }}">Historia</a> · <a href="{{ '/es/contacto.html' | relative_url }}">Contacto</a>
+    <a href="/cantapueblo/es/historia.html">Historia</a> · <a href="/cantapueblo/es/contacto.html">Contacto</a>
   </p>
   </div>
 </section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-mark">Cantapueblo · Fundación COPPLA</p>
+    
+      <p class="footer-note">Mendoza, Argentina — encuentro coral internacional desde 1989.</p>
+    
+  </div>
+</footer>
+
+  <script src="/cantapueblo/assets/js/header-shrink.js"></script>
+  <script src="/cantapueblo/assets/js/reveal.js"></script>
+</body>
+</html>

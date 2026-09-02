@@ -1,0 +1,23 @@
+[
+  {
+    "country_es": "Ejemplo — Argentina",
+    "country_en": "Example — Argentina",
+    "name": "Coro de cámara (ejemplo)",
+    "desc_es": "Entrada de muestra. Se reemplaza por datos reales del registro de coros.",
+    "desc_en": "Sample entry. Will be replaced with real data from the choir registry."
+  },
+  {
+    "country_es": "Ejemplo — Chile",
+    "country_en": "Example — Chile",
+    "name": "Coro juvenil (ejemplo)",
+    "desc_es": "Entrada de muestra. Se reemplaza por datos reales del registro de coros.",
+    "desc_en": "Sample entry. Will be replaced with real data from the choir registry."
+  },
+  {
+    "country_es": "Ejemplo — España",
+    "country_en": "Example — Spain",
+    "name": "Coro polifónico (ejemplo)",
+    "desc_es": "Entrada de muestra. Se reemplaza por datos reales del registro de coros.",
+    "desc_en": "Sample entry. Will be replaced with real data from the choir registry."
+  }
+]

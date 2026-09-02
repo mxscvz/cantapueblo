@@ -1,11 +1,42 @@
----
-lang: en
-section: home
-title: Home
-description: "Cantapueblo, the Choral Feast of America. An international choral gathering in Mendoza, Argentina, since 1989."
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home · Cantapueblo</title>
+  <meta name="description" content="Cantapueblo, the Choral Feast of America. An international choral gathering in Mendoza, Argentina, since 1989.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/cantapueblo/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+  <div class="header-inner">
+    <a class="logo-link" href="/cantapueblo/en/">
+      <img src="/cantapueblo/assets/img/logo.png" alt="Cantapueblo 2027">
+    </a>
+    <nav class="main-nav">
+      
+        <a href="/cantapueblo/en/" aria-current="page">Home</a>
+        <a href="/cantapueblo/en/history.html" >History</a>
+        <a href="/cantapueblo/en/programme.html" >Programme</a>
+        <a href="/cantapueblo/en/contact.html" >Contact</a>
+      
+    </nav>
+    <div class="lang-switch">
+      
+        <a href="/cantapueblo/es/">ES</a>
+        
+        
+        
+      
+    </div>
+  </div>
+</header>
 
-<section class="hero">
+  <main>
+    <section class="hero">
   <h1>The Choral Feast of America</h1>
   <p class="tagline">An international gathering that sings friendship between peoples.</p>
   <div class="hero-stats">
@@ -15,7 +46,7 @@ description: "Cantapueblo, the Choral Feast of America. An international choral 
   </div>
 </section>
 
-<img class="hero-photo reveal" src="{{ '/assets/img/hero-aconcagua.jpg' | relative_url }}" alt="Choirs holding their countries' flags at the foot of Cerro Aconcagua">
+<img class="hero-photo reveal" src="/cantapueblo/assets/img/hero-aconcagua.jpg" alt="Choirs holding their countries' flags at the foot of Cerro Aconcagua">
 <p class="hero-photo-caption">Concert in the Heights, at the foot of Cerro Aconcagua.</p>
 
 <section class="section reveal">
@@ -58,7 +89,7 @@ description: "Cantapueblo, the Choral Feast of America. An international choral 
   <div class="section-inner">
   <div class="pull-quote glass glass-hover">
     <div class="pull-quote-wrap">
-      <img class="pull-quote-photo" src="{{ '/assets/img/quote-portrait.jpg' | relative_url }}" alt="Alejandro Scarpetta addressing the audience during a concert">
+      <img class="pull-quote-photo" src="/cantapueblo/assets/img/quote-portrait.jpg" alt="Alejandro Scarpetta addressing the audience during a concert">
       <div>
         <p>Singing at our festival is an experience you will never forget. The emotion runs high in every concert. Your choir, the beautiful landscapes, good wine and the warmth of our people are the perfect alchemy to celebrate life at Cantapueblo.</p>
         <cite>Alejandro Scarpetta — Founder and Artistic Director</cite>
@@ -96,9 +127,24 @@ description: "Cantapueblo, the Choral Feast of America. An international choral 
     touch to bring your choir to the next edition.
   </p>
   <p>
-    <a class="btn" href="{{ '/en/programme.html' | relative_url }}">See programme</a>
+    <a class="btn" href="/cantapueblo/en/programme.html">See programme</a>
     &nbsp;&nbsp;
-    <a href="{{ '/en/history.html' | relative_url }}">History</a> · <a href="{{ '/en/contact.html' | relative_url }}">Contact</a>
+    <a href="/cantapueblo/en/history.html">History</a> · <a href="/cantapueblo/en/contact.html">Contact</a>
   </p>
   </div>
 </section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-mark">Cantapueblo · Fundación COPPLA</p>
+    
+      <p class="footer-note">Mendoza, Argentina — international choral gathering since 1989.</p>
+    
+  </div>
+</footer>
+
+  <script src="/cantapueblo/assets/js/header-shrink.js"></script>
+  <script src="/cantapueblo/assets/js/reveal.js"></script>
+</body>
+</html>

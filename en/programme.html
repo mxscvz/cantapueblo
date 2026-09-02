@@ -1,0 +1,99 @@
+---
+lang: en
+section: programme
+title: Programme
+description: "What a week at Cantapueblo looks like."
+---
+
+<section class="section reveal" style="padding-top: 3.5rem;">
+  <div class="section-inner">
+  <h2>What a week at Cantapueblo looks like</h2>
+  <p>
+    The festival's typical structure, with concerts in different formats
+    and venues — from the city to the mountains. Exact dates and venues for
+    the 2027 edition will be confirmed later.
+  </p>
+
+  <div class="schedule">
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Day 1</span>
+      <div>
+        <h3>Welcome concert</h3>
+        <p>Choirs arriving a day early take the opening slot; everyone else attends as a special guest.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Day 2</span>
+      <div>
+        <h3>Concert of the Peoples</h3>
+        <p>Each choir shares the stage with others in a joint performance.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Day 3</span>
+      <div>
+        <h3>Concert in the Heights</h3>
+        <p>At the foot of Cerro Aconcagua, in direct contact with the mountain — one of the most memorable moments for visiting choirs.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Day 3 (evening)</span>
+      <div>
+        <h3>Concert for Peace</h3>
+        <p>An evening performance shared among several of the festival's choirs.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Day 4</span>
+      <div>
+        <h3>Street Cantata</h3>
+        <p>Choirs perform as soloists across different open-air spaces in downtown Mendoza.</p>
+      </div>
+    </div>
+    <div class="schedule-item reveal glass glass-hover">
+      <span class="schedule-day">Closing</span>
+      <div>
+        <h3>Final concert</h3>
+        <p>Each choir performs its own piece, then joins the Grand Choir of Cantapueblo, singing "El Canto Grande" together with everyone else.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="audio-block reveal glass">
+    <span class="country">El Canto Grande — the festival's official anthem</span>
+    <audio controls></audio>
+    <p class="bento-note">Player ready to use; a real recording still needs to be added.</p>
+  </div>
+  </div>
+</section>
+
+<section class="section section-alt reveal">
+  <div class="section-inner">
+  <h2>Participating choirs</h2>
+  <p>
+    Each choir's data is loaded from a local JSON file. For now it shows
+    sample entries — it will connect to the real registry once it's
+    consolidated.
+  </p>
+  <div class="bento" id="bento-programa"></div>
+  <p class="bento-note">Sample data, not final.</p>
+  </div>
+</section>
+
+<script>
+  fetch('{{ "/assets/data/programa.json" | relative_url }}')
+    .then(function (res) { return res.json(); })
+    .then(function (coros) {
+      var grid = document.getElementById('bento-programa');
+      coros.forEach(function (c) {
+        var card = document.createElement('div');
+        card.className = "bento-card reveal glass glass-hover";
+        card.innerHTML =
+          '<div class="country">' + c.country_en + '</div>' +
+          '<h3>' + c.name + '</h3>' +
+          '<p>' + c.desc_en + '</p>';
+        grid.appendChild(card);
+        if (window.CantaReveal) { window.CantaReveal.observe(card); } else { card.classList.add('is-visible'); }
+      });
+    });
+</script>
