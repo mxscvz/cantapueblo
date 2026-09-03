@@ -9,11 +9,13 @@ layout: null
   <meta http-equiv="refresh" content="0; url={{ '/es/' | relative_url }}">
   <script>
     var lang = (navigator.language || 'es').toLowerCase();
-    var target = lang.indexOf('en') === 0 ? '{{ "/en/" | relative_url }}' : '{{ "/es/" | relative_url }}';
+    var target = '{{ "/es/" | relative_url }}';
+    if (lang.indexOf('en') === 0) { target = '{{ "/en/" | relative_url }}'; }
+    else if (lang.indexOf('fr') === 0) { target = '{{ "/fr/" | relative_url }}'; }
     window.location.replace(target);
   </script>
 </head>
 <body>
-  <p>Cantapueblo — <a href="{{ '/es/' | relative_url }}">Español</a> · <a href="{{ '/en/' | relative_url }}">English</a></p>
+  <p>Cantapueblo — <a href="{{ '/es/' | relative_url }}">Español</a> · <a href="{{ '/en/' | relative_url }}">English</a> · <a href="{{ '/fr/' | relative_url }}">Français</a></p>
 </body>
 </html>

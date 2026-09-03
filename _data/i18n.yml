@@ -1,0 +1,30 @@
+es:
+  home: "/es/"
+  history: "/es/historia.html"
+  programme: "/es/programa.html"
+  contact: "/es/contacto.html"
+  labels:
+    home: Inicio
+    history: Historia
+    programme: Programa
+    contact: Contacto
+en:
+  home: "/en/"
+  history: "/en/history.html"
+  programme: "/en/programme.html"
+  contact: "/en/contact.html"
+  labels:
+    home: Home
+    history: History
+    programme: Programme
+    contact: Contact
+fr:
+  home: "/fr/"
+  history: "/fr/histoire.html"
+  programme: "/fr/programme.html"
+  contact: "/fr/contact.html"
+  labels:
+    home: Accueil
+    history: Histoire
+    programme: Programme
+    contact: Contact

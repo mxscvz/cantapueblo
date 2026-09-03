@@ -13,22 +13,34 @@
 <body>
   <header class="site-header">
   <div class="header-inner">
+    
     <a class="logo-link" href="/cantapueblo/es/">
       <img src="/cantapueblo/assets/img/logo.png" alt="Cantapueblo 2027">
     </a>
     <nav class="main-nav">
-      
-        <a href="/cantapueblo/es/" >Inicio</a>
-        <a href="/cantapueblo/es/historia.html" >Historia</a>
-        <a href="/cantapueblo/es/programa.html" aria-current="page">Programa</a>
-        <a href="/cantapueblo/es/contacto.html" >Contacto</a>
-      
+      <a href="/cantapueblo/es/" >Inicio</a>
+      <a href="/cantapueblo/es/historia.html" >Historia</a>
+      <a href="/cantapueblo/es/programa.html" aria-current="page">Programa</a>
+      <a href="/cantapueblo/es/contacto.html" >Contacto</a>
     </nav>
     <div class="lang-switch">
       
         
         
-        <a href="/cantapueblo/en/programme.html">EN</a>
+        
+          <span class="lang-current">ES</span>
+        
+      
+        
+        
+        
+          <a href="/cantapueblo/en/programme.html">EN</a>
+        
+      
+        
+        
+        
+          <a href="/cantapueblo/fr/programme.html">FR</a>
         
       
     </div>
@@ -92,42 +104,12 @@
 
   <div class="audio-block reveal glass">
     <span class="country">El Canto Grande — himno oficial del festival</span>
-    <audio controls></audio>
-    <p class="bento-note">Reproductor listo para usar; falta cargar la grabación real.</p>
+    <audio controls>
+      <source src="/cantapueblo/assets/audio/el-canto-grande.mp3" type="audio/mpeg">
+    </audio>
   </div>
   </div>
 </section>
-
-<section class="section section-alt reveal">
-  <div class="section-inner">
-  <h2>Coros participantes</h2>
-  <p>
-    Los datos de cada coro se cargan de un archivo JSON local. Por ahora
-    muestra entradas de ejemplo — se conecta al registro real una vez que
-    esté consolidado.
-  </p>
-  <div class="bento" id="bento-programa"></div>
-  <p class="bento-note">Datos de ejemplo, no definitivos.</p>
-  </div>
-</section>
-
-<script>
-  fetch('/cantapueblo/assets/data/programa.json')
-    .then(function (res) { return res.json(); })
-    .then(function (coros) {
-      var grid = document.getElementById('bento-programa');
-      coros.forEach(function (c) {
-        var card = document.createElement('div');
-        card.className = "bento-card reveal glass glass-hover";
-        card.innerHTML =
-          '<div class="country">' + c.country_es + '</div>' +
-          '<h3>' + c.name + '</h3>' +
-          '<p>' + c.desc_es + '</p>';
-        grid.appendChild(card);
-        if (window.CantaReveal) { window.CantaReveal.observe(card); } else { card.classList.add('is-visible'); }
-      });
-    });
-</script>
 
   </main>
   <footer class="site-footer">
@@ -141,5 +123,6 @@
 
   <script src="/cantapueblo/assets/js/header-shrink.js"></script>
   <script src="/cantapueblo/assets/js/reveal.js"></script>
+  <script src="/cantapueblo/assets/js/carousel.js"></script>
 </body>
 </html>

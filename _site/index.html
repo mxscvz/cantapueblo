@@ -6,11 +6,13 @@
   <meta http-equiv="refresh" content="0; url=/cantapueblo/es/">
   <script>
     var lang = (navigator.language || 'es').toLowerCase();
-    var target = lang.indexOf('en') === 0 ? '/cantapueblo/en/' : '/cantapueblo/es/';
+    var target = '/cantapueblo/es/';
+    if (lang.indexOf('en') === 0) { target = '/cantapueblo/en/'; }
+    else if (lang.indexOf('fr') === 0) { target = '/cantapueblo/fr/'; }
     window.location.replace(target);
   </script>
 </head>
 <body>
-  <p>Cantapueblo — <a href="/cantapueblo/es/">Español</a> · <a href="/cantapueblo/en/">English</a></p>
+  <p>Cantapueblo — <a href="/cantapueblo/es/">Español</a> · <a href="/cantapueblo/en/">English</a> · <a href="/cantapueblo/fr/">Français</a></p>
 </body>
 </html>

@@ -1,33 +1,25 @@
 <header class="site-header">
   <div class="header-inner">
-    <a class="logo-link" href="{{ (page.lang | default: 'es') | prepend: '/' | append: '/' | relative_url }}">
+    {% assign nav_data = site.data.i18n[page.lang] %}
+    <a class="logo-link" href="{{ nav_data.home | relative_url }}">
       <img src="{{ '/assets/img/logo.png' | relative_url }}" alt="Cantapueblo 2027">
     </a>
     <nav class="main-nav">
-      {% if page.lang == 'en' %}
-        <a href="{{ '/en/' | relative_url }}" {% if page.section == 'home' %}aria-current="page"{% endif %}>Home</a>
-        <a href="{{ '/en/history.html' | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>History</a>
-        <a href="{{ '/en/programme.html' | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>Programme</a>
-        <a href="{{ '/en/contact.html' | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>Contact</a>
-      {% else %}
-        <a href="{{ '/es/' | relative_url }}" {% if page.section == 'home' %}aria-current="page"{% endif %}>Inicio</a>
-        <a href="{{ '/es/historia.html' | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>Historia</a>
-        <a href="{{ '/es/programa.html' | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>Programa</a>
-        <a href="{{ '/es/contacto.html' | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>Contacto</a>
-      {% endif %}
+      <a href="{{ nav_data.home | relative_url }}" {% if page.section == 'home' %}aria-current="page"{% endif %}>{{ nav_data.labels.home }}</a>
+      <a href="{{ nav_data.history | relative_url }}" {% if page.section == 'history' %}aria-current="page"{% endif %}>{{ nav_data.labels.history }}</a>
+      <a href="{{ nav_data.programme | relative_url }}" {% if page.section == 'programme' %}aria-current="page"{% endif %}>{{ nav_data.labels.programme }}</a>
+      <a href="{{ nav_data.contact | relative_url }}" {% if page.section == 'contact' %}aria-current="page"{% endif %}>{{ nav_data.labels.contact }}</a>
     </nav>
     <div class="lang-switch">
-      {% if page.lang == 'en' %}
-        {% if page.section == 'home' %}<a href="{{ '/es/' | relative_url }}">ES</a>{% endif %}
-        {% if page.section == 'history' %}<a href="{{ '/es/historia.html' | relative_url }}">ES</a>{% endif %}
-        {% if page.section == 'programme' %}<a href="{{ '/es/programa.html' | relative_url }}">ES</a>{% endif %}
-        {% if page.section == 'contact' %}<a href="{{ '/es/contacto.html' | relative_url }}">ES</a>{% endif %}
-      {% else %}
-        {% if page.section == 'home' %}<a href="{{ '/en/' | relative_url }}">EN</a>{% endif %}
-        {% if page.section == 'history' %}<a href="{{ '/en/history.html' | relative_url }}">EN</a>{% endif %}
-        {% if page.section == 'programme' %}<a href="{{ '/en/programme.html' | relative_url }}">EN</a>{% endif %}
-        {% if page.section == 'contact' %}<a href="{{ '/en/contact.html' | relative_url }}">EN</a>{% endif %}
-      {% endif %}
+      {% for lang_entry in site.data.i18n %}
+        {% assign code = lang_entry[0] %}
+        {% assign entry = lang_entry[1] %}
+        {% if code == page.lang %}
+          <span class="lang-current">{{ code | upcase }}</span>
+        {% else %}
+          <a href="{{ entry[page.section] | relative_url }}">{{ code | upcase }}</a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </header>

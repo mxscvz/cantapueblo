@@ -61,39 +61,9 @@ description: "What a week at Cantapueblo looks like."
 
   <div class="audio-block reveal glass">
     <span class="country">El Canto Grande — the festival's official anthem</span>
-    <audio controls></audio>
-    <p class="bento-note">Player ready to use; a real recording still needs to be added.</p>
+    <audio controls>
+      <source src="{{ '/assets/audio/el-canto-grande.mp3' | relative_url }}" type="audio/mpeg">
+    </audio>
   </div>
   </div>
 </section>
-
-<section class="section section-alt reveal">
-  <div class="section-inner">
-  <h2>Participating choirs</h2>
-  <p>
-    Each choir's data is loaded from a local JSON file. For now it shows
-    sample entries — it will connect to the real registry once it's
-    consolidated.
-  </p>
-  <div class="bento" id="bento-programa"></div>
-  <p class="bento-note">Sample data, not final.</p>
-  </div>
-</section>
-
-<script>
-  fetch('{{ "/assets/data/programa.json" | relative_url }}')
-    .then(function (res) { return res.json(); })
-    .then(function (coros) {
-      var grid = document.getElementById('bento-programa');
-      coros.forEach(function (c) {
-        var card = document.createElement('div');
-        card.className = "bento-card reveal glass glass-hover";
-        card.innerHTML =
-          '<div class="country">' + c.country_en + '</div>' +
-          '<h3>' + c.name + '</h3>' +
-          '<p>' + c.desc_en + '</p>';
-        grid.appendChild(card);
-        if (window.CantaReveal) { window.CantaReveal.observe(card); } else { card.classList.add('is-visible'); }
-      });
-    });
-</script>
