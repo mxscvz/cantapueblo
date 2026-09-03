@@ -11,3 +11,9 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+exclude:
+  - NOTES.md
+  - README.md
+  - Gemfile
+  - Gemfile.lock
