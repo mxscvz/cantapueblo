@@ -238,6 +238,46 @@ de esta foto (2.54:1, más panorámica que la anterior).
 - El segundo carrusel de Historia se renombró a "Una melodía que se
   sigue escribiendo".
 
+## Nuevas secciones (esta vuelta)
+
+- **Quiénes Somos** — página nueva (`es/quienes-somos.html`,
+  `en/about.html`, `fr/qui-sommes-nous.html`). Solo tiene la tarjeta de
+  Alejandro completa; las otras dos son placeholders (`Foto pendiente` /
+  `Nombre pendiente`) hasta que me pases nombre, rol y foto de las otras
+  2 personas del núcleo organizativo.
+- **Preguntas frecuentes** — sección nueva en Contacto, con acordeón
+  nativo de HTML (`<details>/<summary>`, sin JavaScript). Las respuestas
+  son deliberadamente generales — no inventé montos ni plazos que no
+  tengo confirmados. Si en algún momento tenés esos datos, se pueden
+  hacer más específicas.
+- **Coros de todo el mundo** — nube de países en Historia, con banderas.
+  Reutiliza la misma lista de 20 países que ya estaba en el timeline
+  ("Hoy"), ahora visualizada aparte.
+
+## Más color (a pedido)
+
+Ahora hay 4 secciones con tinte de color + vidrio en vez de todo
+blanco/marfil: "Un festival coral internacional" (naranja),
+"Reconocimiento en el sector" (cian), "Coros de todo el mundo" (lima),
+"Preguntas frecuentes" (dorado). Para sumar una quinta, usá
+`section-feature` + una de esas 4 clases de tinte (o agregá una nueva en
+el CSS, mismo patrón).
+
+## Timeline rediseñado
+
+Ya no son cajas de vidrio — es una línea vertical continua con un nodo de
+color en cada año (los colores rotan entre cian/lima/naranja/dorado
+automáticamente por posición, no hay que asignarlos a mano). El año y el
+texto van directo sobre el fondo, sin marco.
+
+## Constelación de países
+
+Reemplazó la nube de banderas. Es un SVG generado matemáticamente — 20
+países distribuidos en círculo alrededor de "Mendoza" en el centro, con
+líneas finas conectando cada uno. Si en algún momento cambia la lista de
+países, el SVG hay que regenerarlo (no es editable a mano fácilmente);
+avisame y lo repito con la lista nueva.
+
 ## Ver el sitio en tu computadora antes de subirlo
 
 Requiere Ruby instalado (ver instrucciones de instalación con Homebrew si

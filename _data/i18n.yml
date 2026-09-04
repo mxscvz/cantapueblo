@@ -2,29 +2,35 @@ es:
   home: "/es/"
   history: "/es/historia.html"
   programme: "/es/programa.html"
+  team: "/es/quienes-somos.html"
   contact: "/es/contacto.html"
   labels:
     home: Inicio
     history: Historia
     programme: Programa
+    team: Quiénes Somos
     contact: Contacto
 en:
   home: "/en/"
   history: "/en/history.html"
   programme: "/en/programme.html"
+  team: "/en/about.html"
   contact: "/en/contact.html"
   labels:
     home: Home
     history: History
     programme: Programme
+    team: About Us
     contact: Contact
 fr:
   home: "/fr/"
   history: "/fr/histoire.html"
   programme: "/fr/programme.html"
+  team: "/fr/qui-sommes-nous.html"
   contact: "/fr/contact.html"
   labels:
     home: Accueil
     history: Histoire
     programme: Programme
+    team: Qui sommes-nous
     contact: Contact
