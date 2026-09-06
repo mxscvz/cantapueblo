@@ -498,10 +498,10 @@ a:focus-visible, button:focus-visible {
 }
 .map-attribution {
   margin-top: 0.6rem;
-  font-size: 0.75rem;
-  color: var(--text-dim);
+  font-size: 0.68rem;
+  color: rgba(92, 92, 88, 0.55);
 }
-.map-attribution a { color: var(--text-dim); text-decoration: underline; }
+.map-attribution a { color: rgba(92, 92, 88, 0.55); text-decoration: underline; }
 
 /* Sections */
 .section {
@@ -800,7 +800,7 @@ a:focus-visible, button:focus-visible {
   .hero-photo-band { min-height: 62vh; }
   .photo-band { aspect-ratio: 3 / 2; }
   .pull-quote-wrap { grid-template-columns: 1fr; gap: 1.2rem; }
-  .pull-quote-photo { aspect-ratio: 16 / 9; max-width: 220px; }
+  .pull-quote-photo { aspect-ratio: 3 / 2; max-width: 100%; width: 100%; margin: 0 auto; }
   .carousel-item { width: 82vw; }
   .carousel-item img { height: 240px; }
 }
