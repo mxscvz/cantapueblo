@@ -270,13 +270,40 @@ color en cada año (los colores rotan entre cian/lima/naranja/dorado
 automáticamente por posición, no hay que asignarlos a mano). El año y el
 texto van directo sobre el fondo, sin marco.
 
-## Constelación de países
+## Mapa real de países (reemplazó la nube de banderas y la constelación)
 
-Reemplazó la nube de banderas. Es un SVG generado matemáticamente — 20
-países distribuidos en círculo alrededor de "Mendoza" en el centro, con
-líneas finas conectando cada uno. Si en algún momento cambia la lista de
-países, el SVG hay que regenerarlo (no es editable a mano fácilmente);
-avisame y lo repito con la lista nueva.
+Es un SVG real del mundo (fuente: [simple-world-map de flekschas](https://github.com/flekschas/simple-world-map),
+licencia CC BY-SA 3.0 — la atribución ya está puesta debajo del mapa, no
+sacarla). Cada país es un `<path>` con un `id` de 2 letras (código ISO
+3166-1, ej. `id="ar"` para Argentina). Los 20 países del festival tienen
+además `class="highlighted"`, que los pinta con el color dorado de la
+paleta; el resto del mundo queda en gris neutro.
+
+Va **embebido directo en el HTML** (no como `<img src="...">`) porque así
+sí puede leer los colores del sitio (`var(--dorado)`, etc.) — si se
+pusiera como imagen externa, esos colores no se verían.
+
+**Para agregar o sacar un país** de los resaltados: buscá su `id="xx"`
+dentro del SVG (código de 2 letras, minúscula) en cualquiera de los 3
+archivos de Historia, y sumale o sacale `class="highlighted"`. Hay que
+repetirlo en los 3 idiomas porque el mapa está copiado en cada archivo.
+
+## Mapa — bug corregido
+
+Argentina, Chile, Ecuador, Suecia, Italia, España, Estados Unidos y
+Malasia son países "compuestos" en el archivo del mapa (tienen islas o
+territorios como piezas separadas, agrupadas en un `<g>` en vez de ser un
+único `<path>`). La regla de color original solo pintaba `<path>`
+sueltos, así que estos 8 países quedaban sin resaltar aunque tuvieran la
+clase correcta — quedó corregido con una regla CSS que también cubre los
+`<path>` adentro de un `<g class="highlighted">`. Se sumaron también las
+Islas Malvinas (`id="fk"`) a los países resaltados.
+
+## Fotos del equipo
+
+Las tres tarjetas de Quiénes Somos ya tienen foto real: Alejandro
+Scarpetta, León Repetur y Gustavo Aguilera. Solo falta el rol de Gustavo
+cuando lo confirmes.
 
 ## Ver el sitio en tu computadora antes de subirlo
 
