@@ -759,7 +759,7 @@ a:focus-visible, button:focus-visible {
 .footer-note { color: var(--text-dim); font-size: 0.88rem; margin: 0; }
 
 @media (max-width: 720px) {
-  .map-attribution { font-size: 0.55rem; color: rgba(92, 92, 88, 0.3); }
+  .map-attribution { font-size: 0.48rem; color: rgba(92, 92, 88, 0.3); }
   .header-inner { flex-wrap: wrap; gap: 1rem; }
   .logo-link img { height: 64px; }
   .site-header.scrolled .logo-link img { height: 36px; }
