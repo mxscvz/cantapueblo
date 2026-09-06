@@ -18,7 +18,10 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
@@ -30,7 +33,7 @@ body {
   position: relative;
 }
 
-main p {
+.section-inner > p {
   text-align: justify;
   text-align-last: left;
 }
@@ -380,9 +383,9 @@ a:focus-visible, button:focus-visible {
   inset: 0;
   z-index: 1;
   background: linear-gradient(180deg,
-    rgba(12, 12, 11, 0.35) 0%,
-    rgba(12, 12, 11, 0.15) 30%,
-    rgba(12, 12, 11, 0.68) 100%);
+    rgba(10, 10, 9, 0.5) 0%,
+    rgba(10, 10, 9, 0.3) 30%,
+    rgba(10, 10, 9, 0.85) 100%);
 }
 .photo-band-content {
   position: relative;
@@ -394,13 +397,13 @@ a:focus-visible, button:focus-visible {
 }
 .photo-band-content h2 {
   color: #fdfcf9;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 16px rgba(0, 0, 0, 0.6);
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   max-width: 20ch;
 }
 .photo-band-content .tagline {
   color: #fdfcf9;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85), 0 2px 16px rgba(0, 0, 0, 0.6);
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400;
   font-size: 1.1rem;
@@ -759,10 +762,22 @@ a:focus-visible, button:focus-visible {
   .header-inner { flex-wrap: wrap; gap: 1rem; }
   .logo-link img { height: 64px; }
   .site-header.scrolled .logo-link img { height: 36px; }
-  .main-nav { order: 3; width: 100%; justify-content: flex-start; gap: 1.2rem; }
+  .main-nav { order: 3; width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 0.9rem 1.2rem; }
   .hero-stats { grid-template-columns: 1fr; }
   .pillars, .bento { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
+  .narrative-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .narrative-grid::-webkit-scrollbar { display: none; }
+  .narrative-card { flex: 0 0 84vw; scroll-snap-align: center; }
   .contact-block { grid-template-columns: 1fr; }
   .timeline { padding-left: 2rem; }
   .timeline-item::before { left: -2rem; }

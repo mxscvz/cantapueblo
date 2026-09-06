@@ -305,6 +305,44 @@ Las tres tarjetas de Quiénes Somos ya tienen foto real: Alejandro
 Scarpetta, León Repetur y Gustavo Aguilera. Solo falta el rol de Gustavo
 cuando lo confirmes.
 
+## Arreglos de mobile (a partir de capturas reales)
+
+- **Bug de fondo, ya resuelto**: el nav con 5 secciones no pasaba a la
+  línea de abajo en mobile — eso empujaba el ancho de **toda la página**,
+  no solo el menú, y por eso se veía una franja vacía a la derecha en
+  todas las capturas. Ahora el nav envuelve bien, y sumé
+  `overflow-x: hidden` en el `<html>` como red de seguridad para que esto
+  no vuelva a pasar aunque algún elemento futuro se desborde.
+- **"Qué buscamos" en mobile**: las 3 tarjetas ahora son un carrusel de
+  una sola tarjeta a la vez, deslizable — antes intentaban entrar las 3
+  en una fila angosta ("chorizo" de texto).
+- **Justificado**: se acotó a los párrafos de introducción (los que están
+  directo dentro de una sección), no a los que están dentro de tarjetas
+  angostas — ahí el justificado quedaba feo por tener muy pocas palabras
+  por línea.
+- **Legibilidad del texto sobre la foto de Historia**: degradé más oscuro
+  y sombra de texto más fuerte.
+
+## Mejoras técnicas (favicon, redes sociales, buscadores)
+
+- **Favicon**: recorté la insignia "2027" del logo (`favicon-16x16.png`,
+  `favicon-32x32.png`, `apple-touch-icon.png`, en la raíz del proyecto).
+- **Open Graph / Twitter Card**: cuando alguien comparte un link del
+  sitio en WhatsApp/Instagram/Facebook, ahora va a aparecer con imagen,
+  título y descripción — la imagen es `assets/img/og-image.jpg`, un
+  recorte de la foto del Aconcagua a 1200×630.
+- **hreflang**: cada página ahora le dice a Google cuáles son sus
+  versiones en los otros dos idiomas, para que no las confunda con
+  contenido duplicado.
+- **Sitemap automático**: sumé el plugin `jekyll-sitemap` (oficial de
+  GitHub Pages, no requiere nada más) — genera solo un `sitemap.xml` con
+  todas las páginas. También agregué `robots.txt` apuntando a ese
+  sitemap.
+- **Carga diferida (`loading="lazy"`)**: en las 183 fotos que no son la
+  primera que ves al entrar a una página. Las fotos de fondo del hero (la
+  del Aconcagua en Inicio, la de Historia) se quedan sin lazy a propósito,
+  porque esas sí hay que verlas de entrada.
+
 ## Ver el sitio en tu computadora antes de subirlo
 
 Requiere Ruby instalado (ver instrucciones de instalación con Homebrew si
