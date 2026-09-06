@@ -498,8 +498,8 @@ a:focus-visible, button:focus-visible {
 }
 .map-attribution {
   margin-top: 0.6rem;
-  font-size: 0.4rem;
-  color: rgba(92, 92, 88, 0.3);
+  font-size: 0.5rem;
+  color: rgba(92, 92, 88, 0.2);
 }
 .map-attribution a { color: rgba(92, 92, 88, 0.3); text-decoration: underline; }
 
