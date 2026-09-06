@@ -762,7 +762,21 @@ a:focus-visible, button:focus-visible {
   .header-inner { flex-wrap: wrap; gap: 1rem; }
   .logo-link img { height: 64px; }
   .site-header.scrolled .logo-link img { height: 36px; }
-  .main-nav { order: 3; width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 0.9rem 1.2rem; }
+  .main-nav {
+    order: 3;
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.4rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 0.15rem;
+  }
+  .main-nav::-webkit-scrollbar { display: none; }
+  .main-nav a { white-space: nowrap; flex: 0 0 auto; }
+  .schedule-item { grid-template-columns: 1fr; gap: 0.5rem; }
+  .schedule-day { padding-top: 0; }
   .hero-stats { grid-template-columns: 1fr; }
   .pillars, .bento { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr; }
