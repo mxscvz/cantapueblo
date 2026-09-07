@@ -498,10 +498,10 @@ a:focus-visible, button:focus-visible {
 }
 .map-attribution {
   margin-top: 0.6rem;
-  font-size: 0.6rem;
-  color: rgba(92, 92, 88, 0.2);
+  font-size: 0.68rem;
+  color: rgba(92, 92, 88, 0.55);
 }
-.map-attribution a { color: rgba(92, 92, 88, 0.3); text-decoration: underline; }
+.map-attribution a { color: rgba(92, 92, 88, 0.55); text-decoration: underline; }
 
 /* Sections */
 .section {
@@ -720,7 +720,7 @@ a:focus-visible, button:focus-visible {
 
 .contact-block {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
   margin-top: 2rem;
 }
@@ -759,7 +759,6 @@ a:focus-visible, button:focus-visible {
 .footer-note { color: var(--text-dim); font-size: 0.88rem; margin: 0; }
 
 @media (max-width: 720px) {
-  .map-attribution { font-size: 0.48rem; color: rgba(92, 92, 88, 0.3); }
   .header-inner { flex-wrap: wrap; gap: 1rem; }
   .logo-link img { height: 64px; }
   .site-header.scrolled .logo-link img { height: 36px; }
