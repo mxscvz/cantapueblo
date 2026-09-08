@@ -107,6 +107,9 @@ a:focus-visible, button:focus-visible {
   transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
+.reveal.is-visible.glass-hover:hover {
+  transform: scale(1.035) translateY(-3px);
+}
 .reveal-1 { transition-delay: 0.08s; }
 .reveal-2 { transition-delay: 0.2s; }
 .reveal-3 { transition-delay: 0.32s; }
@@ -152,39 +155,43 @@ a:focus-visible, button:focus-visible {
   margin-top: 1.2rem;
 }
 
-/* Narrative list — qué buscamos / acciones / diferenciales */
-.narrative-grid {
+/* Qué buscamos — columnas tipográficas, sin marcos */
+.goal-columns {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: 4rem;
 }
-.narrative-card { padding: 1.6rem; }
-.narrative-card .eyebrow { display: block; margin-bottom: 0.6rem; }
-.narrative-card p { margin: 0; font-size: 0.95rem; color: var(--text-dim); }
+.goal-column {
+  padding: 0 2rem;
+  border-left: 1px solid var(--line-strong);
+}
+.goal-column:first-child { border-left: none; padding-left: 0; }
+.goal-column:last-child { padding-right: 0; }
+.goal-column .eyebrow { display: block; margin-bottom: 0.8rem; }
+.goal-column p { margin: 0; color: var(--text-dim); }
 
-/* Cronograma real de conciertos */
-.schedule {
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* Programa — lista editorial, sin tarjetas ni números */
+.concert-list { margin-top: 2.5rem; display: flex; flex-direction: column; }
+.concert-item {
+  padding: 2.6rem 0;
+  border-top: 1px solid var(--line-strong);
 }
-.schedule-item {
-  display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 2rem;
-  padding: 1.4rem 1.6rem;
+.concert-item:first-child { border-top: none; padding-top: 0; }
+.concert-day {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--cian);
+  opacity: 0.85;
+  margin-bottom: 0.9rem;
 }
-.schedule-day {
-  font-size: 0.82rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--dorado);
-  padding-top: 0.2rem;
-}
-.schedule-item h3 { font-size: 1.15rem; margin: 0 0 0.4rem; }
-.schedule-item p { margin: 0; color: var(--text-dim); font-size: 0.95rem; max-width: 56ch; }
+.concert-item:nth-child(4n+2) .concert-day { color: var(--lima); }
+.concert-item:nth-child(4n+3) .concert-day { color: var(--naranja); }
+.concert-item:nth-child(4n+4) .concert-day { color: var(--dorado); }
+.concert-item h3 { font-size: 1.25rem; margin: 0 0 0.5rem; }
+.concert-item p { margin: 0; color: var(--text-dim); max-width: 60ch; }
 
 /* Header */
 .site-header {
@@ -413,23 +420,32 @@ a:focus-visible, button:focus-visible {
   padding-left: 1rem;
 }
 
-/* Quiénes Somos — tarjetas de equipo */
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  margin-top: 2rem;
+/* Quiénes Somos — filas alternadas foto/texto */
+.team-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 2.5rem;
 }
-.team-card { overflow: hidden; }
-.team-photo {
-  width: 100%;
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 2.8rem;
+}
+.team-row.reverse { flex-direction: row-reverse; }
+.team-row-photo {
+  flex: 0 0 38%;
+  width: 38%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  border-radius: 18px;
   display: block;
 }
-.team-photo-placeholder {
-  width: 100%;
+.team-row-photo-placeholder {
+  flex: 0 0 38%;
+  width: 38%;
   aspect-ratio: 1 / 1;
+  border-radius: 18px;
   background: repeating-linear-gradient(135deg, rgba(26,26,26,0.05) 0 10px, transparent 10px 20px);
   display: flex;
   align-items: center;
@@ -439,17 +455,17 @@ a:focus-visible, button:focus-visible {
   text-align: center;
   padding: 1.5rem;
 }
-.team-card-body { padding: 1.3rem 1.4rem 1.5rem; }
-.team-card h3 { font-size: 1.15rem; margin: 0 0 0.3rem; }
-.team-role {
+.team-row-body { flex: 1; }
+.team-row-body h3 { font-size: 1.5rem; margin: 0 0 0.4rem; }
+.team-row-body .team-role {
   display: block;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--dorado);
   text-transform: uppercase;
   letter-spacing: 0.07em;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.9rem;
 }
-.team-card p { margin: 0; font-size: 0.92rem; color: var(--text-dim); }
+.team-row-body p { margin: 0; color: var(--text-dim); }
 
 /* FAQ — acordeón nativo, sin JS */
 .faq-list {
@@ -518,7 +534,7 @@ a:focus-visible, button:focus-visible {
   max-width: 32ch;
   margin-bottom: 1.5rem;
 }
-.section p { max-width: 62ch; color: var(--text-dim); }
+.section p { color: var(--text-dim); }
 .section-alt { background: transparent; }
 .section-feature {
   backdrop-filter: blur(10px) saturate(160%);
@@ -775,23 +791,15 @@ a:focus-visible, button:focus-visible {
   }
   .main-nav::-webkit-scrollbar { display: none; }
   .main-nav a { white-space: nowrap; flex: 0 0 auto; }
-  .schedule-item { grid-template-columns: 1fr; gap: 0.5rem; }
-  .schedule-day { padding-top: 0; }
   .hero-stats { grid-template-columns: 1fr; }
   .pillars, .bento { grid-template-columns: 1fr; }
-  .team-grid { grid-template-columns: 1fr; }
-  .narrative-grid {
-    display: flex;
-    grid-template-columns: none;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    flex-wrap: nowrap;
-    gap: 1rem;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-  .narrative-grid::-webkit-scrollbar { display: none; }
-  .narrative-card { flex: 0 0 84vw; scroll-snap-align: center; }
+  .team-row, .team-row.reverse { flex-direction: column; gap: 1.4rem; }
+  .goal-columns { grid-template-columns: 1fr; gap: 1.8rem; }
+  .goal-column { border-left: none; padding: 0; border-top: 1px solid var(--line-strong); padding-top: 1.4rem; }
+  .goal-column:first-child { border-top: none; padding-top: 0; }
+  .team-row-photo, .team-row-photo-placeholder { width: 100%; flex: none; }
+  .goal-tabs { gap: 1.2rem; }
+  .goal-tab { font-size: 0.95rem; }
   .contact-block { grid-template-columns: 1fr; }
   .timeline { padding-left: 2rem; }
   .timeline-item::before { left: -2rem; }
